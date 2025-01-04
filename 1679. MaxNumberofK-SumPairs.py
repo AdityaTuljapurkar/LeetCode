@@ -1,17 +1,20 @@
 nums = [1,2,3,4]
-k = 5
+k=5
 class ABC :
     def function(self, nums, k):
-        numsMap = {}
-        count = 0
-        for index,i in enumerate(nums):
-            numsMap[index]= i
-        for  i in nums :
-            if (k-i) in numsMap.values():
-                nums.remove(k-i)
-                count+=1
-                
-
+        nums.sort()
+        count = 0 
+        i = 0
+        j = len(nums)-1
+        while i < j : 
+            if (nums[i] + nums[j]) == k :
+                count += 1
+                i += 1
+                j -= 1
+            elif (nums[i] + nums[j-1]) < k :
+                i +=1
+            elif (nums[i] + nums[j-1]) > k :
+                j -= 1
         return count
 obj = ABC()
 print(obj.function(nums,k))
