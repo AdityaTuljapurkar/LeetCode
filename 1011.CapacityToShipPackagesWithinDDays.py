@@ -7,18 +7,18 @@ class ABC :
         l = max(weights) #min
         r = sum(weights) #max
         res = sum(weights)
-
+        
         def countDays(mid):
             shift = 1
             curr = mid
             for weight in weights :
-                if curr -weight < 0 :
+                if curr -weight <= 0 :
                     shift += 1
                     curr = mid
                 curr -= weight
             return shift <= days 
         
-        while l <= r: 
+        while l < r: 
             mid = (l + r) // 2
             if countDays(mid) :
                 res = min(res,mid)
