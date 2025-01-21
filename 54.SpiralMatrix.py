@@ -14,11 +14,11 @@ class ABC :
                 res.append(matrix[i][right-1])
             right -=1
 
-            # if left > right and top>bottom:
-            #     break
-
-            if not (left < right and top < bottom):  # Break early if boundaries overlap
+            if left > right or top>bottom:
                 break
+
+            # if not (left < right and top < bottom):  # Break early if boundaries overlap
+            #     break
             
             for i in range(right-1,left-1,-1):
                 res.append(matrix[bottom-1][i])
