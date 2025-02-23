@@ -18,12 +18,8 @@ class Solution:
         return count
     
 
+        
 
-    
 print(Solution().numRescueBoats([1,2],3) )
-    
-
-
-
 print(Solution().numRescueBoats([3,2,2,1],3) )
             
