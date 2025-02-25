@@ -1,5 +1,4 @@
-
-                        
+                  
 from typing import List
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
@@ -13,6 +12,7 @@ class Solution:
         
         intervals.sort(key = lambda x: x[0])
         
+
         res.append(intervals[0][0])
         
         while b < len(intervals):
