@@ -1,16 +1,16 @@
-from collections import Counter
-
 class Solution:
     def minimumPushes(self, word: str) -> int:
-        freq = Counter(word)
-        sorted_freq = sorted(freq.values(), reverse=True)
+        freq = {}
+        for i in word :
+            freq[i] = freq.get(i, 0) + 1
+        freq = dict(sorted(freq.items(),key= lambda x : x[1], reverse = True))
         
-        pushes = 0
-        for i, count in enumerate(sorted_freq):
-            key_presses = (i // 8) + 1  # Each key can hold up to 9 letters
-            pushes += key_presses * count
-        
-        return pushes
+
+        output  =0
+        for count,i in enumerate(freq.keys()):
+            output += ((count//8)+1 )* freq[i]
+        return output
+    
             
         
    
