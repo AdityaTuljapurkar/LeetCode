@@ -9,6 +9,7 @@ class Solution:
             current = nums[i%n]
             while stack and stack[-1] <= current :
                 stack.pop()
+            #to store only the elemts of the orginal loop 
             if i< n :
                 result.append(stack[-1]if stack else -1)
             stack.append(current)
